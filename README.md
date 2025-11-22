@@ -82,3 +82,5 @@ api-1  | INFO:     172.18.0.2:59860 - "GET /cache HTTP/1.1" 200 OK
 6.2)Adminer
 <img width="1280" height="683" alt="{82A303BB-1FFC-4AE6-ACE1-D52D3E9A5004}" src="https://github.com/user-attachments/assets/2a83ef8d-d4e8-445e-b20f-1cb3d958d082"/>
 
+6.3Api
+<img width="1280" height="183" alt="{5EE72EBC-949E-4FD4-99F0-1EF122ABCE0E}" src="https://github.com/user-attachments/assets/a7f8370a-ff4a-49d5-9811-0227d9e41633" />
