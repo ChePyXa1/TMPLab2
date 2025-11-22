@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-import os, asyncpg, redis
+import asyncpg
+import redis
+import os
 
 app = FastAPI()
 
@@ -10,12 +12,12 @@ async def healthz():
 @app.get("/db")
 async def db():
     conn = await asyncpg.connect(os.getenv("POSTGRES_DSN"))
-    row = await conn.fetchval("select 1")
+    v = await conn.fetchval("SELECT 1;")
     await conn.close()
-    return {"db": row}
+    return {"db": v}
 
 @app.get("/cache")
 async def cache():
-    r = redis.Redis(host=os.getenv("REDIS_HOST","redis"), port=6379)
-    r.set("pong","ok",ex=5)
+    r = redis.Redis(host=os.getenv("REDIS_HOST"), port=6379)
+    r.set("pong", "ok", ex=5)
     return {"cache": r.get("pong").decode()}
